@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://nw3kbejf06ss"]
+
+[ext_resource type="PackedScene" uid="uid://k10mywm3a6pd" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://bcbc05cw4ibm8" path="res://scenes/trees.tscn" id="2_rwgxs"]
+
+[sub_resource type="Environment" id="Environment_3vyb7"]
+background_mode = 1
+background_color = Color(0.03137255, 0.050980393, 0.07058824, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.09019608, 0.12941177, 0.16470589, 1)
+ambient_light_energy = 0.15
+fog_enabled = true
+fog_light_color = Color(0.5176471, 0.5764706, 0.6039216, 1)
+fog_light_energy = 0.35
+fog_sky_affect = 0.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ur0r1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy83t"]
+albedo_color = Color(0.18136483, 0.17191851, 0.007022084, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_reag0"]
+material = SubResource("StandardMaterial3D_wy83t")
+size = Vector3(90, 1, 90)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wy83t"]
+size = Vector3(90, 1, 89.98511)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_reag0"]
+albedo_color = Color(0.0627451, 0.16862746, 0.16470589, 1)
+metallic = 0.25
+roughness = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwgxs"]
+albedo_color = Color(0.24370515, 0.11118097, 1.4439226e-07, 1)
+
+[node name="World" type="Node3D" unique_id=1497008977]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1049812575]
+environment = SubResource("Environment_3vyb7")
+
+[node name="Mainfloor" type="StaticBody3D" parent="." unique_id=2077828795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.142)
+physics_material_override = SubResource("PhysicsMaterial_ur0r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mainfloor" unique_id=847131229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.800853, -0.10932541, -14.919533)
+mesh = SubResource("BoxMesh_reag0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mainfloor" unique_id=14618872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.798805)
+shape = SubResource("BoxShape3D_wy83t")
+
+[node name="Player" parent="." unique_id=137209722 instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Trees" parent="." unique_id=638429499 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9830432, 0, -35.94874)
+
+[node name="Trees3" parent="." unique_id=446634597 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1491437, 0, -26.79517)
+
+[node name="Trees4" parent="." unique_id=57941128 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0940275, 0, -21.497963)
+
+[node name="Trees5" parent="." unique_id=2066743190 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3406281, 0, -15.403587)
+
+[node name="Trees6" parent="." unique_id=958746903 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6763554, 0, -13.153769)
+
+[node name="Trees7" parent="." unique_id=2033399282 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.239194, 0, -7.630106)
+
+[node name="Trees2" parent="." unique_id=1769396855 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9028506, 0, -40.415733)
+
+[node name="Water" type="Node3D" parent="." unique_id=826406802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4018536, 2.658314, -22.555107)
+
+[node name="Pool1" type="CSGBox3D" parent="Water" unique_id=1871253218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2861648, -2.653134, 4.488037)
+size = Vector3(7.510742, 0.08, 12.976074)
+material = SubResource("StandardMaterial3D_reag0")
+
+[node name="Pool2" type="CSGBox3D" parent="Water" unique_id=1634245148]
+transform = Transform3D(0.31955612, -0.00063637184, 0.94756716, 0.0019914205, 0.99999803, 0, -0.9475653, 0.0018870047, 0.31955674, -13.032825, -2.6716378, -16.44162)
+size = Vector3(23.583496, 0.08, 6.850708)
+material = SubResource("StandardMaterial3D_reag0")
+
+[node name="Ground" type="Node3D" parent="." unique_id=1359642397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4018536, 2.658314, -22.555107)
+
+[node name="Pathsegment" type="CSGBox3D" parent="Ground" unique_id=472454038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43495, 14)
+size = Vector3(5, 0.3, 8)
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[node name="Pathsegment2" type="CSGBox3D" parent="Ground" unique_id=73282466]
+transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, -1, -2.435, 8)
+size = Vector3(5, 0.3, 8)
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[node name="Pathsegment3" type="CSGBox3D" parent="Ground" unique_id=1901025153]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -2, -2.435, 1)
+size = Vector3(5, 0.3, 8)
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[node name="Pathsegment4" type="CSGBox3D" parent="Ground" unique_id=1608937637]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -2, -2.435, -5)
+size = Vector3(5, 0.3, 8)
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[node name="Pathsegment5" type="CSGBox3D" parent="Ground" unique_id=1113968248]
+transform = Transform3D(0.6132503, 0.0044178283, 0.78987646, 0, 0.9999844, -0.005592976, -0.7898888, 0.0034298934, 0.6132407, -3.82658, -2.435, -9.901222)
+size = Vector3(5, 0.3, 8)
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[node name="Pathsegment6" type="CSGBox3D" parent="Ground" unique_id=377011718]
+transform = Transform3D(0.88449013, 0.0026094553, 0.4665521, 1.8391032e-10, 0.9999844, -0.005592976, -0.46655935, 0.004946931, 0.8844762, -7.952304, -2.435, -15.106365)
+size = Vector3(5, 0.3, 8)
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[node name="Pathsegment7" type="CSGBox3D" parent="Ground" unique_id=1249101327]
+transform = Transform3D(0.88404727, 0.01726449, -0.4670789, -0.03114874, 0.9992721, -0.022019887, 0.4663588, 0.034015525, 0.8839415, -7.952304, -2.435, -19.59349)
+size = Vector3(5, 0.3, 8)
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[node name="Pathsegment8" type="CSGBox3D" parent="Ground" unique_id=1190591442]
+transform = Transform3D(0.98302615, 0.026642311, -0.18152189, -0.03114874, 0.9992721, -0.022019885, 0.18080306, 0.02730029, 0.98314035, -5.796055, -2.435, -26.662243)
+size = Vector3(5, 0.3, 8)
+material = SubResource("StandardMaterial3D_rwgxs")

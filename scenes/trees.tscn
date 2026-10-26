@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bcbc05cw4ibm8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnsk1"]
+albedo_color = Color(0.46696454, 0.28105184, 2.9841065e-06, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_reag0"]
+albedo_color = Color(0.24262065, 0.29797542, 0, 1)
+
+[node name="Trees" type="Node3D" unique_id=638429499]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1732506556]
+
+[node name="Trunk" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=1891523241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402, 2.5295215, 0.24169922)
+radius = 0.3
+height = 5.0
+material = SubResource("StandardMaterial3D_nnsk1")
+
+[node name="Canopy" type="CSGSphere3D" parent="CSGCombiner3D/Trunk" unique_id=1145367318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.218191, 0)
+radius = 2.0
+material = SubResource("StandardMaterial3D_reag0")
