@@ -16,7 +16,11 @@ extends CharacterBody3D
 # The Head will rotate up and down independently of the player body.
 @onready var head: Node3D = $Head
 
-
+#reference to the stair walking mechanism
+@onready var stairWalker : Node3D = $stairwalker
+@onready var stairCast : RayCast3D = $stairwalker/stairRayCast3D
+@onready var wallCast : RayCast3D = $stairwalker/wallRayCast3D2
+@onready var frontCast : RayCast3D = $stairwalker/frontRayCast3D3
 # Acceleration caused by gravity, in meters per second squared.
 # We'll use this to pull the player down when they're airborne.
 var gravity: float = 9.8
@@ -24,41 +28,41 @@ var gravity: float = 9.8
 
 # Runs once when the player enters the active scene.
 func _ready() -> void:
-    # Locks the mouse to the game window for first-person camera control.
-    Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# Locks the mouse to the game window for first-person camera control.
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 # Handles input events such as mouse movement and key presses.
 func _unhandled_input(event: InputEvent) -> void:
 
-    # Check whether the current event is mouse movement.
-    if event is InputEventMouseMotion:
+	# Check whether the current event is mouse movement.
+	if event is InputEventMouseMotion:
 
-        # Rotate the entire player left and right.
-        # Rotating the body changes the direction WASD movement faces.
-        rotate_y(-event.relative.x * mouse_sensitivity)
+		# Rotate the entire player left and right.
+		# Rotating the body changes the direction WASD movement faces.
+		rotate_y(-event.relative.x * mouse_sensitivity)
 
-        # Rotate only the Head up and down.
-        # This allows us to look around without tilting the player's body.
-        head.rotate_x(-event.relative.y * mouse_sensitivity)
+		# Rotate only the Head up and down.
+		# This allows us to look around without tilting the player's body.
+		head.rotate_x(-event.relative.y * mouse_sensitivity)
 
-        # Limit vertical camera rotation so we can't look endlessly
-        # over our head or flip upside down.
-        head.rotation.x = clamp(
-            head.rotation.x,
-            deg_to_rad(-85),
-            deg_to_rad(85)
-        )
+		# Limit vertical camera rotation so we can't look endlessly
+		# over our head or flip upside down.
+		head.rotation.x = clamp(
+			head.rotation.x,
+			deg_to_rad(-85),
+			deg_to_rad(85)
+		)
 
-    # Godot's built-in ui_cancel action is Escape by default.
-    if event.is_action_pressed("ui_cancel"):
+	# Godot's built-in ui_cancel action is Escape by default.
+	if event.is_action_pressed("ui_cancel"):
 
-        # Unlock the mouse so we can interact with the editor or window.
-        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		# Unlock the mouse so we can interact with the editor or window.
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-    # If we click a mouse button, capture the mouse again.
-    if event is InputEventMouseButton and event.pressed:
-        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# If we click a mouse button, capture the mouse again.
+	if event is InputEventMouseButton and event.pressed:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 # Runs during physics updates.
@@ -66,54 +70,63 @@ func _unhandled_input(event: InputEvent) -> void:
 # on a fixed timestep.
 func _physics_process(delta: float) -> void:
 
-    # If the player isn't standing on a surface, apply gravity.
-    if not is_on_floor():
-        # delta is the time since the previous physics update.
-        # Multiplying by delta makes gravity consistent across updates.
-        velocity.y -= gravity * delta
+	# If the player isn't standing on a surface, apply gravity.
+	if not is_on_floor():
+		# delta is the time since the previous physics update.
+		# Multiplying by delta makes gravity consistent across updates.
+		velocity.y -= gravity * delta
 
-    # If we're on the floor and still moving downward, stop that movement.
-    if is_on_floor() and velocity.y < 0:
-        velocity.y = 0
+	# If we're on the floor and still moving downward, stop that movement.
+	if is_on_floor() and velocity.y < 0:
+		velocity.y = 0
 
 
-    # Read the movement actions and turn them into a 2D direction.
-    # The result has an X value (left/right) and a Y value (forward/back).
-    # The order here is left, right, forward, backward.
-    var input_dir := Input.get_vector(
-        "move_left",
-        "move_right",
-        "move_forward",
+	# Read the movement actions and turn them into a 2D direction.
+	# The result has an X value (left/right) and a Y value (forward/back).
+	# The order here is left, right, forward, backward.
+	var input_dir := Input.get_vector(
+		"move_left",
+		"move_right",
+		"move_forward",
         "move_back"
-    )
+	)
 
 
-    # Convert the input direction into the player's facing direction.
-    # transform.basis represents the player's rotation and orientation.
-    # This makes W move forward relative to where the player is looking.
-    # Vector3(input_dir.x, 0, input_dir.y) keeps movement horizontal.
-    var direction := (
-        transform.basis * Vector3(input_dir.x, 0, input_dir.y)
-    ).normalized()
+	# Convert the input direction into the player's facing direction.
+	# transform.basis represents the player's rotation and orientation.
+	# This makes W move forward relative to where the player is looking.
+	# Vector3(input_dir.x, 0, input_dir.y) keeps movement horizontal.
+	var direction := (
+		transform.basis * Vector3(input_dir.x, 0, input_dir.y)
+	).normalized()
 
 
-    # If the player is pressing a movement key...
-    if direction:
+	# If the player is pressing a movement key...
+	if direction:
 
-        # Set horizontal velocity based on the direction and movement speed.
-        # velocity.x is side-to-side movement.
-        # velocity.z is forward-and-backward movement.
-        velocity.x = direction.x * move_speed
-        velocity.z = direction.z * move_speed
+		# Set horizontal velocity based on the direction and movement speed.
+		# velocity.x is side-to-side movement.
+		# velocity.z is forward-and-backward movement.
+		velocity.x = direction.x * move_speed
+		velocity.z = direction.z * move_speed
 
-    else:
-        # If no movement key is pressed, gradually slow horizontal movement
-        # until the player stops.
-        # move_toward() moves a value toward a target without overshooting.
-        velocity.x = move_toward(velocity.x, 0, move_speed)
-        velocity.z = move_toward(velocity.z, 0, move_speed)
+	else:
+		# If no movement key is pressed, gradually slow horizontal movement
+		# until the player stops.
+		# move_toward() moves a value toward a target without overshooting.
+		velocity.x = move_toward(velocity.x, 0, move_speed)
+		velocity.z = move_toward(velocity.z, 0, move_speed)
 
 
-    # Apply velocity and handle collisions with the environment.
-    # Godot updates the CharacterBody3D's position through this call.
-    move_and_slide()
+	# Apply velocity and handle collisions with the environment.
+	# Godot updates the CharacterBody3D's position through this call.
+	move_and_slide()
+
+
+
+	if abs(input_dir.length()) > 0.1:
+		stairWalker.rotation.y = atan2(-input_dir.x, -input_dir.y)
+		if is_on_wall() and is_on_floor() and wallCast.is_colliding():
+			if stairCast.is_colliding() and !frontCast.is_colliding():
+				var step_height = stairCast.get_collision_point().y - global_position.y
+				global_position.y += step_height + 0.05
