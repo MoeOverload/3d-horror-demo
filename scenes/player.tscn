@@ -35,13 +35,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.048649997, -0.596)
 mesh = SubResource("BoxMesh_reag0")
 
 [node name="stairRayCast3D" type="RayCast3D" parent="stairwalker" unique_id=709169763]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33759052, -0.6)
 target_position = Vector3(0, -0.2, 0)
 
 [node name="wallRayCast3D2" type="RayCast3D" parent="stairwalker" unique_id=1238647090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103164256, -0.2742108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13537219, -0.2742108)
 target_position = Vector3(0, 0, -0.4)
 
 [node name="frontRayCast3D3" type="RayCast3D" parent="stairwalker" unique_id=1240052069]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31255752, -0.34127507)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34498447, -0.34127507)
 target_position = Vector3(0, 0, -0.4)
