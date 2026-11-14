@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d2t00rsxl1lo8"]
+
+[ext_resource type="PackedScene" uid="uid://broaqevig6xl" path="res://BuildingModels/house1arc/arc_1_wall_1.glb" id="1_87p4u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(0.40625, 2.5878296, 0.4453125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3k2l"]
+size = Vector3(0.40625, 2.5878296, 0.4453125)
+
+[node name="house_arc1" type="Node3D" unique_id=96430113]
+
+[node name="arc_1_wall_12" parent="." unique_id=818235011 instance=ExtResource("1_87p4u")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1293687683]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2087079913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2957655, 1.3087902, 0.00390625)
+shape = SubResource("BoxShape3D_reag0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=609002201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2997638, 1.3087902, 0.00390625)
+shape = SubResource("BoxShape3D_r3k2l")

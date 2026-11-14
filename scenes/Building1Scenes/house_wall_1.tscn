@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d0c6r138r727n"]
+
+[ext_resource type="PackedScene" uid="uid://0y4r33st5jmi" path="res://BuildingModels/house1wall1/wall_1.glb" id="1_qs2nt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(4.023987, 3.059021, 0.13995361)
+
+[node name="HouseWall1" type="Node3D" unique_id=1573618317]
+
+[node name="wall_12" parent="." unique_id=1579158600 instance=ExtResource("1_qs2nt")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=671561782]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=19952365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0050354004, 1.5140504, -0.0027160645)
+shape = SubResource("BoxShape3D_reag0")

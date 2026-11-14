@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cjkrewjdhhehv"]
+
+[ext_resource type="PackedScene" uid="uid://b01ys51jfm3sm" path="res://BuildingModels/house1floor1/floor_ceiling_1.glb" id="1_ayagb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(4.0250397, 0.060058594, 4.0319824)
+
+[node name="house1floor1" type="Node3D" unique_id=1515057485]
+
+[node name="floor_ceiling_12" parent="." unique_id=840555963 instance=ExtResource("1_ayagb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1510705015]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=95178766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005531311, -0.009159982, -0.004760742)
+shape = SubResource("BoxShape3D_reag0")

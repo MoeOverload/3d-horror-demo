@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cehthc61d31ud"]
+
+[ext_resource type="PackedScene" uid="uid://d3hhp8qoncso4" path="res://BuildingModels/house1doorway1/doorway_1_half.glb" id="1_bbp5e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(0.5172119, 2.125, 0.18493652)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpii1"]
+size = Vector3(0.5172119, 2.125, 0.18493652)
+
+[node name="house1doorwayhalf1" type="Node3D" unique_id=938802615]
+
+[node name="doorway_1_half2" parent="." unique_id=760283011 instance=ExtResource("1_bbp5e")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=820725941]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=484075356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74937487, 1.0964124, -0.00079345703)
+shape = SubResource("BoxShape3D_reag0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1920857108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7576375, 1.0964124, -0.00079345703)
+shape = SubResource("BoxShape3D_tpii1")
