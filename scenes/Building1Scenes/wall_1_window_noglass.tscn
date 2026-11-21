@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c6x14y67cufla"]
+
+[ext_resource type="PackedScene" uid="uid://btdj8wf2y0dst" path="res://BuildingModels/window1/window_2_single_frame_only.glb" id="1_h13sw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(1.1350098, 0.8869629, 0.2326355)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wy83t"]
+size = Vector3(1.4662476, 2.4977875, 0.21191406)
+
+[node name="wall1windowNoglass" type="Node3D" unique_id=2086939380]
+
+[node name="window_2_single_frame_only2" parent="." unique_id=707232062 instance=ExtResource("1_h13sw")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=699486985]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2008877028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003540039, 0.4593506, -0.013900757)
+shape = SubResource("BoxShape3D_reag0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1451212341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2908256, 1.2666245, 0.0043945313)
+shape = SubResource("BoxShape3D_wy83t")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=518784652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2786987, 1.2666245, 0.0043945313)
+shape = SubResource("BoxShape3D_wy83t")

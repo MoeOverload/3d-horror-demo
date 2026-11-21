@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b8cu6uam74a3u"]
+
+[ext_resource type="PackedScene" uid="uid://p85u1vvax4vl" path="res://PropModels/chairProp1/chair_mp_3.glb" id="1_yfis2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(0.45910645, 0.9351349, 0.4638672)
+
+[node name="chairProp1" type="Node3D" unique_id=1150095498]
+
+[node name="chair_mp_32" parent="." unique_id=1837012751 instance=ExtResource("1_yfis2")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2005627522]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=208316421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0067749023, 0.5282364, 0.0073242188)
+shape = SubResource("BoxShape3D_reag0")

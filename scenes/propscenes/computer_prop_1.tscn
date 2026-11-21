@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dj4j0ixowkptp"]
+
+[ext_resource type="PackedScene" uid="uid://ccq02vy4oxwe4" path="res://PropModels/MonitorScreenprop/pc_monitor_mp_1.glb" id="1_332l7"]
+
+[node name="computerProp1" type="Node3D" unique_id=148824993]
+
+[node name="pc_monitor_mp_12" parent="." unique_id=1473872897 instance=ExtResource("1_332l7")]
+
+[editable path="pc_monitor_mp_12"]

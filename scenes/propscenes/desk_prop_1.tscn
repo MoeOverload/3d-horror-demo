@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://vd22nik7c1n"]
+
+[ext_resource type="PackedScene" uid="uid://dmcp4cga7fvyc" path="res://PropModels/tablemodel1/table_large_3.glb" id="1_qrgc4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(1.5942383, 0.9234619, 0.69628906)
+
+[node name="deskProp1" type="Node3D" unique_id=1711421308]
+
+[node name="table_large_32" parent="." unique_id=142773361 instance=ExtResource("1_qrgc4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1887886346]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=590175282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0061035156, 0.45098877, -0.008300781)
+shape = SubResource("BoxShape3D_reag0")

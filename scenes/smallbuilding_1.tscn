@@ -66,10 +66,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.254117, -0.008559644, -15.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7594888, -0.008559644, -15.872136)
 
 [node name="house1floor5" parent="floors" unique_id=775809333 instance=ExtResource("2_kqgoy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3003087, 0, 0.21715048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3003087, 0, 0.21010724)
 
 [node name="house1floor9" parent="floors" unique_id=805709374 instance=ExtResource("2_kqgoy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2973256, 0, -3.7666883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2973256, 0, -3.8117504)
 
 [node name="house1floor10" parent="floors" unique_id=1176930194 instance=ExtResource("2_kqgoy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2872024, 0, -7.829287)
@@ -81,13 +81,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2983437, 0, -11.867309)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7824184, 0, 0.21962816)
 
 [node name="house1floor13" parent="floors" unique_id=1795936348 instance=ExtResource("3_lonij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7824184, 0, -3.8156998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7734734, 0, -3.8156998)
 
 [node name="house1floor14" parent="floors" unique_id=847616407 instance=ExtResource("3_lonij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7824184, 0, -7.8315783)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7742763, 0, -7.8315783)
 
 [node name="house1floor15" parent="floors" unique_id=749082011 instance=ExtResource("3_lonij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7824184, 0, -11.876374)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.755623, 0, -11.858406)
 
 [node name="walls" type="Node3D" parent="." unique_id=51563817]
 

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://coxonhbu2e1ds"]
+
+[ext_resource type="PackedScene" uid="uid://b2d7sjsdurvib" path="res://PropModels/shelfProp1/shelf_mp_4.glb" id="1_agfng"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(1.2521973, 2.1970215, 0.25708008)
+
+[node name="shelfProp1" type="Node3D" unique_id=1489845012]
+
+[node name="shelf_mp_42" parent="." unique_id=226976377 instance=ExtResource("1_agfng")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1389078078]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1102738236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 1.1009521, 0.00012207031)
+shape = SubResource("BoxShape3D_reag0")

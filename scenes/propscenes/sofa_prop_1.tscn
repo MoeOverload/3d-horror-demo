@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cbqdp4akpf5h7"]
+
+[ext_resource type="PackedScene" uid="uid://bksara8frsv28" path="res://PropModels/couchModel1/sofa_4.glb" id="1_2qsac"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(2.1123047, 0.5629883, 0.9147339)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wy83t"]
+size = Vector3(2.0966187, 1.0265503, 0.20336914)
+
+[node name="sofaProp1" type="Node3D" unique_id=1082032402]
+
+[node name="sofa_42" parent="." unique_id=932006816 instance=ExtResource("1_2qsac")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1480150258]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=326460706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010253906, 0.2746582, 0.48666382)
+shape = SubResource("BoxShape3D_reag0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=2020451213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016998291, 0.5115051, 0.10998535)
+shape = SubResource("BoxShape3D_wy83t")

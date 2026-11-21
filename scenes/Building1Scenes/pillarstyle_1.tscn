@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://csc10utk1cbu0"]
+
+[ext_resource type="PackedScene" uid="uid://bpqwdpv1vq5xa" path="res://BuildingModels/pillarstyle1/pillar_1.glb" id="1_ha64a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(0.6, 3, 0.6)
+
+[node name="pillarstyle1" type="Node3D" unique_id=398805470]
+
+[node name="pillar_12" parent="." unique_id=1631041038 instance=ExtResource("1_ha64a")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=491935991]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1799730643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 7.450581e-09)
+shape = SubResource("BoxShape3D_reag0")

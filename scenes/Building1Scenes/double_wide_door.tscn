@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cpdxih6u82w02"]
+
+[ext_resource type="PackedScene" uid="uid://dinpkhgeh1kym" path="res://BuildingModels/house1doubledoor1/doorway_2_wide.glb" id="1_p060a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(1.1, 2.1000001, 0.2)
+
+[node name="doubleWideDoor" type="Node3D" unique_id=389967408]
+
+[node name="doorway_2_wide2" parent="." unique_id=488599870 instance=ExtResource("1_p060a")]
+
+[node name="double_door_4_piece_1" parent="doorway_2_wide2/doorway_2_wide" parent_id_path=PackedInt32Array(488599870, 436088795) index="0" unique_id=1777802788]
+visible = false
+
+[node name="double_door_4_piece_2" parent="doorway_2_wide2/doorway_2_wide" parent_id_path=PackedInt32Array(488599870, 436088795) index="1" unique_id=830908235]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=582627745]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1438432526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 1.0500001, 2.9802322e-08)
+shape = SubResource("BoxShape3D_reag0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1462421178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5500002, 1.0500001, 2.9802322e-08)
+shape = SubResource("BoxShape3D_reag0")
+
+[editable path="doorway_2_wide2"]
