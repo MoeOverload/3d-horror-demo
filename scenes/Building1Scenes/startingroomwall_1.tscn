@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dbhyvtw87k0tf"]
+
+[ext_resource type="Texture2D" uid="uid://20w8uvvc03xy" path="res://materials/Plastertype1/PaintedPlaster009_2K-JPG_Color.jpg" id="1_3g7q7"]
+[ext_resource type="Texture2D" uid="uid://djtow7q0uhi4n" path="res://materials/Plastertype1/PaintedPlaster009_2K-JPG_AmbientOcclusion.jpg" id="2_61q5b"]
+[ext_resource type="Texture2D" uid="uid://5iun1go0636r" path="res://materials/Plastertype1/PaintedPlaster009_2K-JPG_NormalGL.jpg" id="3_hjtx6"]
+[ext_resource type="Texture2D" uid="uid://l7dujwe32yqn" path="res://materials/Plastertype1/PaintedPlaster009_2K-JPG_Roughness.jpg" id="4_hjtx6"]
+[ext_resource type="Texture2D" uid="uid://d2njr1le5wwor" path="res://materials/woodbaseboard/Wood007_2K-JPG_Color.jpg" id="5_hjtx6"]
+[ext_resource type="Texture2D" uid="uid://dmnc2333mm6ac" path="res://materials/woodbaseboard/Wood007_2K-JPG_NormalGL.jpg" id="6_j361o"]
+[ext_resource type="Texture2D" uid="uid://biqofg3plxveq" path="res://materials/woodbaseboard/Wood007_2K-JPG_Roughness.jpg" id="7_2es05"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy83t"]
+albedo_color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+albedo_texture = ExtResource("1_3g7q7")
+roughness_texture = ExtResource("4_hjtx6")
+normal_enabled = true
+normal_texture = ExtResource("3_hjtx6")
+ao_enabled = true
+ao_texture = ExtResource("2_61q5b")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_reag0"]
+material = SubResource("StandardMaterial3D_wy83t")
+size = Vector3(4, 3, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(4, 2.9, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6sge"]
+albedo_texture = ExtResource("5_hjtx6")
+roughness_texture = ExtResource("7_2es05")
+normal_enabled = true
+normal_texture = ExtResource("6_j361o")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wy83t"]
+material = SubResource("StandardMaterial3D_m6sge")
+size = Vector3(4, 0.2, 0.47070313)
+
+[node name="startingroomwall1" type="Node3D" unique_id=1948068145]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1399683548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.4901161e-08)
+mesh = SubResource("BoxMesh_reag0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1299086375]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=462579233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 1.4901161e-08)
+shape = SubResource("BoxShape3D_reag0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1456620988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_wy83t")

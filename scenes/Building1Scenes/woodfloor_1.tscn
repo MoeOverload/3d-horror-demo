@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bqcsoc4af3jmi"]
+
+[ext_resource type="Texture2D" uid="uid://cijhj736yyy46" path="res://materials/oldwoodfloor/WoodFloor041_2K-JPG_Color.jpg" id="1_d0qfo"]
+[ext_resource type="Texture2D" uid="uid://l8l4vjidyfov" path="res://materials/oldwoodfloor/WoodFloor041_2K-JPG_AmbientOcclusion.jpg" id="2_j0jaq"]
+[ext_resource type="Texture2D" uid="uid://dt0h3sky6u7gr" path="res://materials/oldwoodfloor/WoodFloor041_2K-JPG_NormalGL.jpg" id="3_c077e"]
+[ext_resource type="Texture2D" uid="uid://ckx3qatvolmy7" path="res://materials/oldwoodfloor/WoodFloor041_2K-JPG_Roughness.jpg" id="4_nqey4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ur0r1"]
+albedo_color = Color(0.6666667, 0.6666667, 0.6666667, 1)
+albedo_texture = ExtResource("1_d0qfo")
+roughness_texture = ExtResource("4_nqey4")
+normal_enabled = true
+normal_texture = ExtResource("3_c077e")
+ao_enabled = true
+ao_texture = ExtResource("2_j0jaq")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_reag0"]
+material = SubResource("StandardMaterial3D_ur0r1")
+size = Vector3(4, 0.001, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(4, 0.001, 4)
+
+[node name="woodfloor1" type="Node3D" unique_id=1888215195]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=505989887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00049999356, 0)
+mesh = SubResource("BoxMesh_reag0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1947031351]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=846560767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00049999356, 0)
+shape = SubResource("BoxShape3D_reag0")

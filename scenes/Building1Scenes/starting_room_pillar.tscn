@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cxc1vdefu2gd2"]
+
+[ext_resource type="Texture2D" uid="uid://b52mdij8iddki" path="res://materials/bricks1/Bricks014_2K-JPG_Color.jpg" id="1_shq81"]
+[ext_resource type="Texture2D" uid="uid://nn27evwae6a8" path="res://materials/bricks1/Bricks014_2K-JPG_AmbientOcclusion.jpg" id="2_nbaaf"]
+[ext_resource type="Texture2D" uid="uid://c1eeg341jnwv6" path="res://materials/bricks1/Bricks014_2K-JPG_NormalGL.jpg" id="3_bsgs8"]
+[ext_resource type="Texture2D" uid="uid://b6ivop13vjweu" path="res://materials/bricks1/Bricks014_2K-JPG_Roughness.jpg" id="4_n13rd"]
+[ext_resource type="Texture2D" uid="uid://d2njr1le5wwor" path="res://materials/woodbaseboard/Wood007_2K-JPG_Color.jpg" id="5_shq81"]
+[ext_resource type="Texture2D" uid="uid://dmnc2333mm6ac" path="res://materials/woodbaseboard/Wood007_2K-JPG_NormalGL.jpg" id="6_nbaaf"]
+[ext_resource type="Texture2D" uid="uid://biqofg3plxveq" path="res://materials/woodbaseboard/Wood007_2K-JPG_Roughness.jpg" id="7_bsgs8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_liwve"]
+albedo_color = Color(0.28485027, 0.2848503, 0.28485018, 1)
+albedo_texture = ExtResource("1_shq81")
+roughness_texture = ExtResource("4_n13rd")
+normal_enabled = true
+normal_texture = ExtResource("3_bsgs8")
+ao_enabled = true
+ao_texture = ExtResource("2_nbaaf")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_reag0"]
+material = SubResource("StandardMaterial3D_liwve")
+size = Vector3(0.6, 3, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
+size = Vector3(0.6, 3, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ur0r1"]
+albedo_texture = ExtResource("5_shq81")
+roughness_texture = ExtResource("7_bsgs8")
+normal_enabled = true
+normal_texture = ExtResource("6_nbaaf")
+
+[sub_resource type="BoxMesh" id="BoxMesh_wy83t"]
+material = SubResource("StandardMaterial3D_ur0r1")
+size = Vector3(0.7, 0.2, 0.7)
+
+[node name="startingRoomPillar" type="Node3D" unique_id=1615674223]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2035135657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_reag0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1882015921]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=670699672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_reag0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=597498225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09972316, 0)
+mesh = SubResource("BoxMesh_wy83t")
