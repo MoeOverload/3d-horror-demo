@@ -8,18 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://dmnc2333mm6ac" path="res://materials/woodbaseboard/Wood007_2K-JPG_NormalGL.jpg" id="6_j361o"]
 [ext_resource type="Texture2D" uid="uid://biqofg3plxveq" path="res://materials/woodbaseboard/Wood007_2K-JPG_Roughness.jpg" id="7_2es05"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy83t"]
-albedo_color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqv0e"]
+albedo_color = Color(0.5529556, 0.55295557, 0.55295557, 1)
 albedo_texture = ExtResource("1_3g7q7")
 roughness_texture = ExtResource("4_hjtx6")
 normal_enabled = true
 normal_texture = ExtResource("3_hjtx6")
 ao_enabled = true
 ao_texture = ExtResource("2_61q5b")
-uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_reag0"]
-material = SubResource("StandardMaterial3D_wy83t")
+material = SubResource("StandardMaterial3D_nqv0e")
 size = Vector3(4, 3, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_reag0"]
@@ -43,6 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.4901161e-08)
 mesh = SubResource("BoxMesh_reag0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1299086375]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=462579233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 1.4901161e-08)

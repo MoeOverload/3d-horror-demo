@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://qwjvwy60hcle"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d408p"]
+size = Vector3(2.5300293, 3.2861328, 1)
+
+[node name="windowwall1" type="Node3D" unique_id=413363604]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1985581213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34962463, 2.816986, 0)
+mesh = SubResource("BoxMesh_d408p")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1877335632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7548828, 1.9318848, -5.5871058)
+size = Vector3(6.5097656, 4.8637695, 0.3544922)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=2130978612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017359972, -0.1672678, 0.26965618)
+operation = 2
+size = Vector3(2.7474976, 2.1211243, 1.7565918)

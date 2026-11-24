@@ -13,7 +13,6 @@
 
 [sub_resource type="Environment" id="Environment_3vyb7"]
 background_mode = 1
-background_color = Color(0.03137255, 0.050980393, 0.07058824, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.072842635, 0.072842635, 0.072842635, 1)
 fog_enabled = true
@@ -116,9 +115,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9989853, 0, -0.19799423)
 
 [node name="woodfloor29" parent="starting area/floors" unique_id=177928274 instance=ExtResource("3_jhx03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.998985, 0, -0.19799423)
-
-[node name="woodfloor13" parent="starting area/floors" unique_id=1922884929 instance=ExtResource("3_jhx03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.331482)
 
 [node name="doors" type="Node3D" parent="starting area" unique_id=240073119]
 
