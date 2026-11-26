@@ -1,72 +1,84 @@
+# Asylum: Zombie Survival
 
-
-
-
-# Untitled Swamp Horror Game
-
-*A first-person survival horror game set in an isolated town hiding something deeply disturbing.*
+*A first-person, round-based zombie survival game set inside an abandoned asylum.*
 
 ## About
 
-This is an independent horror game currently in early development, built with **Godot 4**.
+This is an independent survival horror game currently in early development, built with **Godot 4**.
 
-Inspired by atmospheric survival horror games like *Outlast* and *Resident Evil*, the project aims to combine tense exploration, limited resources, psychological horror, and cosmic horror in a grounded, unsettling setting.
+Inspired by classic round-based zombie survival games, the project aims to deliver an intense cooperative survival experience set within a dark, abandoned asylum.
 
-The story begins in a strange town where the residents seem to know more than they're willing to admit. As the protagonist uncovers the town's dark secret, the journey leads into the surrounding swamps, where hostile locals, disturbing discoveries, and something far more sinister await.
+Players must survive increasingly dangerous waves of infected, explore the asylum, earn points, and unlock new areas as they fight to stay alive.
 
-The goal is to create a memorable horror experience that builds tension through atmosphere, sound, exploration, and the fear of what might be hiding just beyond the flashlight beam.
+The asylum features communal rooms, patient wards, treatment areas, administrative offices, and a basement containing critical equipment. Players will need to restore power by locating missing components, activating electrical switches, and bringing the generator back online.
+
+With limited visibility, player-controlled flashlights, emergency red lighting, and a hostile environment, the goal is to create an atmospheric survival experience where every new area presents another potential threat.
 
 ## Gameplay Preview
 
-*An early look at the game's first-person movement, flashlight, fog, and swamp environment.*
-https://github.com/user-attachments/assets/4239893a-de0c-4b89-9890-3b99b816435d
+*Gameplay footage and development screenshots will be added as the project progresses.*
 
+## Planned Gameplay Features
 
-## Current Features
+- [ ] First-person zombie survival gameplay
+- [ ] Round-based enemy spawning and progression
+- [ ] Increasingly difficult zombie waves
+- [ ] Point-based economy
+- [ ] Buyable doors and area progression
+- [ ] Weapon purchasing and upgrades
+- [ ] Power restoration objectives
+- [ ] Collectible generator components
+- [ ] Pack-a-Punch-style weapon upgrade system
+- [ ] Zombie AI with chasing and attacking behaviours
+- [ ] Player health and damage systems
+- [ ] Cooperative multiplayer for 2–4 players
 
-The project is in its early prototype stage.
+## Environment & Atmosphere
 
-- First-person player movement and mouse-look controls
-- Collision and basic world geometry
-- Flashlight attached to the player camera
-- Dark environment with atmospheric fog
-- Early swamp environment built with placeholder geometry
-- Basic path, trees, and water surfaces
+The game is set inside an abandoned asylum, designed around a dark, gritty, realistic horror aesthetic.
 
-## Planned Features
+Planned environmental features include:
 
-- [ ] Expanded swamp environment and environmental storytelling
-- [ ] Ambient audio and dynamic sound design
-- [ ] Improved environmental assets and materials
-- [ ] Enemy AI with patrol, investigation, and chase behaviours
-- [ ] Stealth and escape gameplay
-- [ ] Scripted horror encounters
-- [ ] Story progression and exploration
-- [ ] Additional locations, including the town and surrounding wilderness
-- [ ] Performance optimization and visual polish
+- [ ] Detailed asylum interior and modular room layouts
+- [ ] Realistic PBR materials and textures
+- [ ] Emergency red lighting when the power is offline
+- [ ] Functional environmental lighting after power restoration
+- [ ] Player-controlled flashlights
+- [ ] Environmental storytelling and visual details
+- [ ] Blood decals, grime, and environmental damage
+- [ ] Atmospheric audio and dynamic sound design
+- [ ] Flickering and malfunctioning light fixtures
 
-Features and scope may change throughout development.
+## Multiplayer
+
+Cooperative multiplayer is a planned feature, with a target of 2–4 players.
+
+The intended design is peer-hosted multiplayer, allowing one player to host a session while others join and survive together.
+
+Multiplayer systems will be developed alongside the core gameplay to ensure that enemy behaviour, player progression, purchases, and objectives work correctly across all players.
 
 ## Built With
 
 - **Engine:** Godot 4
 - **Language:** GDScript
-- **Rendering:** Godot 3D renderer
+- **Rendering:** Godot 3D Forward+ Renderer
 - **Version Control:** Git and GitHub
 
 ## Development Philosophy
 
-The project is being developed incrementally, prioritizing a playable experience before expanding the scope.
+The project is being developed incrementally, prioritizing playable systems and a solid foundation before expanding its scope.
 
-Early development uses placeholder geometry and built-in Godot tools to establish level layout, gameplay mechanics, lighting, and atmosphere. Assets and environmental details will be improved as the project progresses.
+Development begins with level construction, environmental materials, lighting, and core player mechanics. Gameplay systems, enemy behaviour, progression, and multiplayer functionality will be introduced as the project develops.
 
-The focus is on building a complete, polished horror experience while keeping development manageable for a small independent project.
+The focus is on creating a complete and enjoyable survival experience while keeping development manageable for an independent developer.
 
 ## Project Status
 
-**Early prototype — active development**
+**Early development — active development**
 
-Core movement, lighting, and initial environmental elements are in place. Gameplay systems, enemy behaviour, story progression, and final art are still planned or in development.
+The project is transitioning into its new asylum-based zombie survival direction. Current work is focused on environmental construction, realistic materials, level layout, and lighting.
+
+Most gameplay systems listed above are planned rather than implemented.
 
 ## Future Release
 
@@ -80,4 +92,5 @@ Third-party assets, plugins, and other resources will be credited here as they a
 
 ---
 
-*More to come as the project takes shape.*
+*Survive the rounds. Restore the power. Make it out alive.*
+
